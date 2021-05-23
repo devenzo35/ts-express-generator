@@ -1,24 +1,24 @@
 import { Request, Response } from "express";
+import User from "../models/user";
 
-const getRequest = (req: Request, res: Response)=>{
-    res.json({getWorking: true})
-}
+const getUsers = (req: Request, res: Response) => {
+  res.json({ getWorking: true });
+};
 
-const postRequest = (req: Request, res: Response)=>{
-    res.send({postWorking: true})
-}
+const postUser = (req: Request, res: Response) => {
+  const { name, email, password } = req.body;
+  res.json({ name, email, password });
+};
 
-const putRequest = (req: Request, res: Response)=>{
-    res.json({putWorking: true})
-}
+const putUser = (req: Request, res: Response) => {
+  const { id } = req.params;
 
-const deleteRequest = (req: Request, res: Response)=>{
-    res.json({deleteWorking: true})
-}
+  res.json(id);
+};
 
-export  {
-    getRequest,
-    postRequest,
-    putRequest,
-    deleteRequest
-}
+const deleteUser = (req: Request, res: Response) => {
+  const { id } = req.params;
+  res.json(id);
+};
+
+export { getUsers, postUser, putUser, deleteUser };

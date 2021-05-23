@@ -2,22 +2,25 @@
   "name": "nodejs-shell",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dis/index.js",
   "scripts": {
-    "dev": "nodemon ./src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon ./dis/index.js",
+    "start": "node ./dis/index.js",
+    "w": "npx tsc -w"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.12.10"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.10",
     "@types/express": "^4.17.11",
     "@types/node": "^15.0.1",
-    "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   }
 }
